@@ -1,9 +1,21 @@
 #include <iostream>
-using namespace std;
+
+int e(int base, int exp);
 
 int main() {
+    int b,ne;
+    std::cout<<"Ingrese la base del exponente"<<std::endl;
+    std::cin>>b;
+    std::cout<<"Ingrese el numero al que desea elevar la base"<<std::endl;
+    std::cin>>ne;
+    std::cout<<e(b,ne);
+}
 
-    cout << "Examen Final Prog 3" << endl;
-
-    return 0;
+int e(int base, int exp){
+    if (exp==0){
+        return 1;
+    }
+    else {
+        return base*e(base,exp-1);
+    }
 }
